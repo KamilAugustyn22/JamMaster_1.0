@@ -3,14 +3,16 @@ package pl.coderslab.User;
 
 import lombok.Getter;
 import lombok.Setter;
+import pl.coderslab.Song.Song;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Setter
 @Getter
-@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
