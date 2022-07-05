@@ -1,4 +1,4 @@
-package pl.coderslab.Author;
+package pl.coderslab.author;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

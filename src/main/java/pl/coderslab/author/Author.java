@@ -1,8 +1,7 @@
-package pl.coderslab.Author;
+package pl.coderslab.author;
 
 import lombok.Getter;
 import lombok.Setter;
-import pl.coderslab.Song.Song;
 
 import javax.persistence.*;
 

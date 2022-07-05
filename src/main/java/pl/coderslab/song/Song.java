@@ -1,9 +1,9 @@
-package pl.coderslab.Song;
+package pl.coderslab.song;
 
 import lombok.Getter;
 import lombok.Setter;
-import pl.coderslab.Author.Author;
-import pl.coderslab.User.User;
+import pl.coderslab.author.Author;
+import pl.coderslab.user.User;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
