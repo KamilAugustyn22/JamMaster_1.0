@@ -6,4 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/author")
 public class AuthorController {
+
+    @RequestMapping("/list")
+    public String authorList(){
+        return "authorList";
+    }
 }

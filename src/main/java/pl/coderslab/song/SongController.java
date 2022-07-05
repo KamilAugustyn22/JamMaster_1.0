@@ -9,7 +9,10 @@ public class SongController {
 
     @RequestMapping("/add")
     public String addSong(){
-
         return "addSong";
+    }
+    @RequestMapping("/list")
+    public String songList(){
+        return "songList";
     }
 }
