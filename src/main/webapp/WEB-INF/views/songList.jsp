@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,7 +68,7 @@
                 <i class="fas fa-fw fa-cog"></i>
                 <span>Listy</span>
             </a>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div id="collapseTwo" class="collapse active" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Wybierz listę:</h6>
                     <a class="collapse-item" href="/author/list">Lista Autorów</a>
@@ -132,7 +133,7 @@
         </li>
 
         <!-- Nav Item - Tables -->
-        <li class="nav-item active">
+        <li class="nav-item">
             <a class="nav-link" href="tables.html">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Tabele</span></a>
@@ -371,40 +372,31 @@
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Piosenki</h6>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start date</th>
-                                    <th>Salary</th>
+                                    <th>ID</th>
+                                    <th>Tytuł</th>
+                                    <th>Tonacja</th>
+                                    <th>Metrum</th>
+                                    <th>Dodano</th>
+                                    <th>Akcje</th>
                                 </tr>
                                 </thead>
-                                <tfoot>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start date</th>
-                                    <th>Salary</th>
-                                </tr>
-                                </tfoot>
                                 <tbody>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
-                                </tr>
+                                    <c:forEach var="song" items="${songs}">
+                                        <tr>
+                                            <th>${song.getId()}</th>
+                                            <th>${song.getTitle()}</th>
+                                            <th>${song.getSongKey()}</th>
+                                            <th>${song.getMtrm()}</th>
+                                            <th>${song.getCreatedOn()}</th>
+                                        </tr>
+                                    </c:forEach>
                                 </tbody>
                             </table>
                         </div>
