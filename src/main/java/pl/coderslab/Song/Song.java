@@ -2,7 +2,6 @@ package pl.coderslab.Song;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.data.annotation.CreatedDate;
 import pl.coderslab.Author.Author;
 import pl.coderslab.User.User;
 
@@ -21,12 +20,12 @@ public class Song {
     private String title;
     @ManyToOne
     private Author author;
-    private String key;
+    private String songKey;
     private String introChords;
     private String verseChords;
     private String reffChords;
     private String bridgeChords;
-    private String text;
+    private String songText;
     private int tempo;
     private String mtrm;
     @ManyToOne

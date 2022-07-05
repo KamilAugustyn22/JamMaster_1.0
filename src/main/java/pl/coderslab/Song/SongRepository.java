@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface SongRepository extends JpaRepository<Song, Long> {
-    @Query(value = "INSERT :song INTO songs; ", nativeQuery = true)
+    @Query(value = "INSERT :song INTO song; ", nativeQuery = true)
     void createSong(@Param("song")Song song);
 
     Song readSongById(long id);
