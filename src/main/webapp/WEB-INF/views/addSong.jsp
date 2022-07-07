@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -381,13 +382,43 @@
                   Autor: <input type="text" name="author">
                   Tempo: <input type="number" name="BPM">
                   Metrum: <input type="text" name="mtrm"><br/><br/>
-                  Tonacja: <input type="text" name="songKey"><br/><br/>
+                  Tonacja: <select name="songKey">
+                            <optgroup label="Durowa">
+                              <option>C</option>
+                              <option>C#</option>
+                              <option>D</option>
+                              <option>D#</option>
+                              <option>E</option>
+                              <option>F</option>
+                              <option>F#</option>
+                              <option>G</option>
+                              <option>G#</option>
+                              <option>A</option>
+                              <option>B</option>
+                              <option>H</option>
+                            </optgroup>
+                            <optgroup label="Molowa">
+                              <option>c</option>
+                              <option>c#</option>
+                              <option>d</option>
+                              <option>d#</option>
+                              <option>e</option>
+                              <option>f</option>
+                              <option>f#</option>
+                              <option>g</option>
+                              <option>g#</option>
+                              <option>a</option>
+                              <option>b</option>
+                              <option>h</option>
+                            </optgroup>
+                </select>
+                  <br/><br/>
                   Akordy: intro (oddziel spacją): <input type="text" name="introChords"><br/><br/>
                   Akordy: zwortka (oddziel spacją): <input type="text" name="verseChords"><br/><br/>
                   Akordy: refren (oddziel spacją): <input type="text" name="reffrainChords"><br/><br/>
                   Akordy: most (oddziel spacją): <input type="text" name="bridgeChords"><br/><br/>
                   Tekst: <textarea name="songText" style="height: 200px; width:500px"></textarea><br/><br/>
-                  <input type="submit" value="Dodaj!">
+                  <input type="submit" onclick="alert('Dodano piosenkę!')" value="Dodaj!">
                 </form>
               </table>
             </div>
