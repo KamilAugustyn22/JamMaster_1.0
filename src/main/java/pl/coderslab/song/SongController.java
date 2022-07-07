@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
@@ -17,11 +18,16 @@ public class SongController {
         this.songRepository = songRepository;
     }
 
-    @RequestMapping("/add")
+    @RequestMapping(value = "/add")
+    public String addSongForm(){
+        return "addSong";
+    }
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String addSong(){
 
 
-        return "addSong";
+
+        return "redirect:/song/list";
     }
 
     @RequestMapping(value = "/list")
