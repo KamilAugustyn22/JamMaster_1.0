@@ -32,4 +32,12 @@ public class Song {
     private User user;
     @Column(name = "created")
     private LocalDateTime createdOn;
+
+    public String getAuthor(){
+        return author.getName();
+    }
+
+    public void setAuthor(String name){
+        this.author.setName(name);
+    }
 }

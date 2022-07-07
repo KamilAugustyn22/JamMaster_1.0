@@ -62,13 +62,13 @@
         </div>
 
         <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
+        <li class="nav-item active">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-cog"></i>
                 <span>Listy</span>
             </a>
-            <div id="collapseTwo" class="collapse active" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Wybierz listę:</h6>
                     <a class="collapse-item" href="/author/list">Lista Autorów</a>
@@ -384,6 +384,7 @@
                                     <th>Tonacja</th>
                                     <th>Metrum</th>
                                     <th>Dodano</th>
+                                    <th>Autor</th>
                                     <th>Akcje</th>
                                 </tr>
                                 </thead>
@@ -395,6 +396,8 @@
                                             <th>${song.getSongKey()}</th>
                                             <th>${song.getMtrm()}</th>
                                             <th>${song.getCreatedOn()}</th>
+                                            <th>${song.getAuthor()}</th>
+                                            <th><a href="/song/details?ID=${song.getId()}">Szczegóły</a> </th>
                                         </tr>
                                     </c:forEach>
                                 </tbody>
