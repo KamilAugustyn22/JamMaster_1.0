@@ -19,4 +19,12 @@ public class HomeController {
         model.addAttribute("liczbaPiosenek",songRepository.countAllSongs());
         return "index";
     }
+    @RequestMapping("/register")
+    public String register(){
+        return "register";
+    }
+    @RequestMapping("/login")
+    public String login(){
+        return "login";
+    }
 }
