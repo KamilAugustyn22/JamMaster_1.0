@@ -50,7 +50,8 @@
                   <input type="text" class="form-control form-control-user" id="exampleFirstName"
                          placeholder="Imię">
                 </div>
-                <div class="col-sm-6">
+
+                <div class="col-sm-6 mb-3 mb-sm-0">
                   <input type="text" class="form-control form-control-user" id="exampleLastName"
                          placeholder="Nazwisko">
                 </div>
