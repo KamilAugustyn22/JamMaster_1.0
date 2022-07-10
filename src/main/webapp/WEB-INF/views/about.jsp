@@ -18,7 +18,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>JamMaster - Lista Setów</title>
+  <title>JamMaster - O aplikacji</title>
 
   <!-- Custom fonts for this template -->
   <link href="../vendor/fontawesome-free/css/all.css" rel="stylesheet" type="text/css">
