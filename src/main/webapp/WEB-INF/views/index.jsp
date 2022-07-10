@@ -383,7 +383,7 @@
                 <!-- Content Row -->
                 <div class="row">
 
-                    <!-- Earnings (Monthly) Card Example -->
+                    <!-- Songs counter -->
                     <div class="col-xl-3 col-md-6 mb-4">
                         <div class="card border-left-primary shadow h-100 py-2">
                             <div class="card-body">
@@ -401,7 +401,7 @@
                         </div>
                     </div>
 
-                    <!-- Earnings (Monthly) Card Example -->
+                    <!-- Users songs counter -->
                     <div class="col-xl-3 col-md-6 mb-4">
                         <div class="card border-left-success shadow h-100 py-2">
                             <div class="card-body">
@@ -419,7 +419,7 @@
                         </div>
                     </div>
 
-                    <!-- Earnings (Monthly) Card Example -->
+                    <!-- Added authors counter -->
                     <div class="col-xl-3 col-md-6 mb-4">
                         <div class="card border-left-info shadow h-100 py-2">
                             <div class="card-body">
@@ -447,7 +447,7 @@
                         </div>
                     </div>
 
-                    <!-- Pending Requests Card Example -->
+                    <!-- Added users sets counter -->
                     <div class="col-xl-3 col-md-6 mb-4">
                         <div class="card border-left-warning shadow h-100 py-2">
                             <div class="card-body">
@@ -476,7 +476,7 @@
                     <!-- Content Column -->
                     <div class="col-lg-6 mb-4">
 
-                        <!-- Project Card Example -->
+                        <!-- Last added song -->
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
                                 <h6 class="m-0 font-weight-bold text-primary">Ostatnio dodana piosenka</h6>
@@ -488,8 +488,8 @@
                                 <h4 class="small font-weight-bold">Tonacja: ${songKey}</h4>
                             </div>
                         </div>
-
-                        <!-- Color System -->
+                        <!-- Shortcuts -->
+                        <h4>Na skróty:</h4>
                         <div class="row">
                             <div class="col-lg-6 mb-4">
                                 <a href="/song/list" class="btn-primary">
