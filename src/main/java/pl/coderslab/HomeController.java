@@ -37,4 +37,8 @@ public class HomeController {
     public String login(){
         return "login";
     }
+    @RequestMapping("/about")
+    public String aboutUs(){
+        return "about";
+    }
 }

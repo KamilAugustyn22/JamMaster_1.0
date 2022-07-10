@@ -553,7 +553,7 @@
                                 </div>
                                 <p>Naszą misją jest ułatwienie życia jak największej liczbie muzyków. W tym celu stworzyliśmy
                                 tę aplikację. Staramy się na bieżąco dodawać do niej nowe funkcjonalności oraz poprawiać już istniejące</p>
-                                <a target="_blank" rel="nofollow" href="#">Więcej o aplikacji &rarr;</a>
+                                <a target="_blank" rel="nofollow" href="/about">Więcej o aplikacji &rarr;</a>
                             </div>
                         </div>
                     </div>
