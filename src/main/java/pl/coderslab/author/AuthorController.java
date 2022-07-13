@@ -23,11 +23,8 @@ public class AuthorController {
 
 
     @RequestMapping("/list")
-    public String authorList(Model model, Author author){
+    public String authorList(Model model){
         model.addAttribute("authors", authorRepository.findAllAuthors());
-
-        //model.addAttribute("songNumber", authorRepository.countAllSongsByAuthor(long id));
-//        Jak zdobyć ID autora do policzenia piosenek?
         return "authorList";
     }
     @RequestMapping("/list/{id}")
