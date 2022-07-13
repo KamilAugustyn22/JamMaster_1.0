@@ -397,7 +397,7 @@
                 </select>
                   <br/><br/>
                   Akordy: intro (oddziel spacją): <input type="text" name="introChords" path="song.introChords"><br/><br/>
-                  Akordy: zwortka (oddziel spacją): <input type="text" name="verseChords" path="song.verseChords"><br/><br/>
+                  Akordy: zwrotka (oddziel spacją): <input type="text" name="verseChords" path="song.verseChords"><br/><br/>
                   Akordy: refren (oddziel spacją): <input type="text" name="reffChords" path="song.reffChords"><br/><br/>
                   Akordy: most (oddziel spacją): <input type="text" name="bridgeChords" path="song.bridgeChords"><br/><br/>
                   Tekst: <textarea name="songText" style="height: 200px; width:500px" path="song.songText"></textarea><br/><br/>
