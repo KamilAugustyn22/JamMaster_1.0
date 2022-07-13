@@ -27,8 +27,10 @@ public class AuthorController {
         model.addAttribute("authors", authorRepository.findAllAuthors());
         return "authorList";
     }
-    @RequestMapping("/list/{id}")
+    @RequestMapping("/{id}")
     public String authorSongs(Model model, @PathVariable("id") long id){
+        Author author = authorRepository.readAuthorById(id);
+        model.addAttribute("authorsName",author.getName());
         model.addAttribute("songs", songRepository.findAllByAuthor(id));
         return "authorsSongs";
     }

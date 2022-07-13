@@ -29,7 +29,8 @@ public interface SongRepository extends JpaRepository<Song, Long> {
     @Query("SELECT s from Song s")
     List<Song> findAllSongs();
 
-    List<Song>findAllByAuthor(long id);
+    @Query("SELECT s from Song s where s.author.id = :id")
+    List<Song>findAllByAuthor(@Param("id") long id);
 
     Song countAllByAuthor(long author_id);
 

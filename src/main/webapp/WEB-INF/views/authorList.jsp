@@ -372,7 +372,7 @@
                                 <tr>
                                     <th>${author.getId()}</th>
                                     <th>${author.getName()}</th>
-                                    <th><a href="/author/list/${author.getId()}">Lista piosenek</a></th>
+                                    <th><a href="/author/${author.getId()}">Lista piosenek</a></th>
                                 </tr>
                                 </c:forEach>
                                 </tbody>
