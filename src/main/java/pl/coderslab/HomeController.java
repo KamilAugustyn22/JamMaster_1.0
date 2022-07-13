@@ -44,12 +44,6 @@ public class HomeController {
 
     @PostMapping("/register")
     public String register(User user){
-//        User user = new User();
-//        user.setName(name);
-//        user.setSurname(surName);
-//        user.setEmail(email);
-//        user.setUsername(username);
-//        user.setPassword(password);
         userRepository.createUser(user.getName(), user.getSurname(), user.getEmail(),user.getUsername(), user.getPassword());
         return "redirect:/login";
     }
