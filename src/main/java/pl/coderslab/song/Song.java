@@ -37,7 +37,10 @@ public class Song {
         return author.getName();
     }
 
-    public void setAuthor(String name){
-        this.author.setName(name);
+
+
+
+    public String toString(){
+        return String.format("Song: id = %s,  title = %s, author = %s", id, title , author);
     }
 }
