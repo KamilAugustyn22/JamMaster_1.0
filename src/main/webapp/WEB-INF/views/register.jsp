@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: mac
@@ -44,35 +45,35 @@
             <div class="text-center">
               <h1 class="h4 text-gray-900 mb-4">Stwórz Konto!</h1>
             </div>
-            <form class="user" method="post" action="/user/reg">
+
+            <form:form  modelAttribute="user" class="user" method="post" action="/register">
               <div class="form-group row">
                 <div class="col-sm-6 mb-3 mb-sm-0">
-                  <input type="text" class="form-control form-control-user" id="firstname"
-                         placeholder="Imię">
+                  <form:input type="text" class="form-control form-control-user" name="firstname"
+                         placeholder="Imię" path="name"/>
                 </div>
 
                 <div class="col-sm-6 mb-3 mb-sm-0">
-                  <input type="text" class="form-control form-control-user" id="surname"
-                         placeholder="Nazwisko">
+                  <form:input type="text" class="form-control form-control-user" name="surname"
+                         placeholder="Nazwisko" path="surname"/>
                 </div>
               </div>
               <div class="form-group">
-                <input type="email" class="form-control form-control-user" id="email"
-                       placeholder="Adres email">
+                <form:input type="email" class="form-control form-control-user" name="email"
+                       placeholder="Adres email" path="email"/>
               </div>
               <div class="form-group row">
                 <div class="col-sm-6 mb-3 mb-sm-0">
-                  <input type="text" class="form-control form-control-user"
-                         id="username" placeholder="Login">
+                  <form:input type="text" class="form-control form-control-user"
+                         name="username" placeholder="Login" path="username"/>
                 </div>
                 <div class="col-sm-6">
-                  <input type="password" class="form-control form-control-user"
-                         id="password" placeholder="Hasło">
+                  <form:input type="password" class="form-control form-control-user"
+                  name="password" placeholder="Hasło" path="password"/>
                 </div>
               </div>
-              <a href="/user/reg" class="btn btn-primary btn-user btn-block">
-                Zarejestruj się!
-              </a>
+              <input type="submit" class="btn btn-primary btn-user btn-block" value="Zarejestruj się!"/>
+
               <hr>
               <a href="/" class="btn btn-google btn-user btn-block">
                 <i class="fab fa-google fa-fw"></i> Zarejestruj przez Google
@@ -80,7 +81,7 @@
               <a href="/" class="btn btn-facebook btn-user btn-block">
                 <i class="fab fa-facebook-f fa-fw"></i> Zarejestruj przez Facebooka
               </a>
-            </form>
+            </form:form>
             <hr>
             <div class="text-center">
               <a class="small" href="forgot-password.html">Zapomniałeś hasła?</a>
