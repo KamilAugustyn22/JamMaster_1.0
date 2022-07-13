@@ -378,11 +378,11 @@
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <form action="/song/add" method="post">
-                  Tytuł: <input type="text" name="title">
-                  Autor: <input type="text" name="author">
-                  Tempo: <input type="number" name="BPM">
-                  Metrum: <input type="text" name="mtrm"><br/><br/>
-                  Tonacja: <select name="songKey">
+                  Tytuł: <input type="text" name="title" path="song.title">
+                  Autor: <input type="text" name="authorsName" path="song.author">
+                  Tempo: <input type="number" name="tempo" path="song.tempo">
+                  Metrum: <input type="text" name="mtrm" path="song.mtrm"><br/><br/>
+                  Tonacja: <select name="songKey" path="song.songKey">
                             <optgroup label="Durowa">
                               <option>C</option>
                               <option>C#</option>
@@ -413,11 +413,11 @@
                             </optgroup>
                 </select>
                   <br/><br/>
-                  Akordy: intro (oddziel spacją): <input type="text" name="introChords"><br/><br/>
-                  Akordy: zwortka (oddziel spacją): <input type="text" name="verseChords"><br/><br/>
-                  Akordy: refren (oddziel spacją): <input type="text" name="reffrainChords"><br/><br/>
-                  Akordy: most (oddziel spacją): <input type="text" name="bridgeChords"><br/><br/>
-                  Tekst: <textarea name="songText" style="height: 200px; width:500px"></textarea><br/><br/>
+                  Akordy: intro (oddziel spacją): <input type="text" name="introChords" path="song.introChords"><br/><br/>
+                  Akordy: zwortka (oddziel spacją): <input type="text" name="verseChords" path="song.verseChords"><br/><br/>
+                  Akordy: refren (oddziel spacją): <input type="text" name="reffChords" path="song.reffChords"><br/><br/>
+                  Akordy: most (oddziel spacją): <input type="text" name="bridgeChords" path="song.bridgeChords"><br/><br/>
+                  Tekst: <textarea name="songText" style="height: 200px; width:500px" path="song.songText"></textarea><br/><br/>
                   <input type="submit" onclick="alert('Dodano piosenkę!')" value="Dodaj!">
                 </form>
               </table>
