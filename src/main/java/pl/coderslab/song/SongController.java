@@ -16,12 +16,12 @@ import java.time.LocalDateTime;
 public class SongController {
     private final SongRepository songRepository;
     private final UserRepository userRepository;
-    private final AuthorController authorController;
+    private final AuthorRepository authorRepository;
 
     public SongController(SongRepository songRepository, AuthorRepository authorRepository, UserRepository userRepository, AuthorController authorController) {
         this.songRepository = songRepository;
         this.userRepository = userRepository;
-        this.authorController = authorController;
+        this.authorRepository = authorRepository;
     }
 
     @GetMapping(value = "/add")
@@ -35,10 +35,15 @@ public class SongController {
                           @RequestParam String songText){
         User user = userRepository.readUserById(1);
 
-        Author author = authorController.checkIfExists(authorsName);
+        Author author = authorRepository.findAuthorByName(authorsName);
+        if(author == null){
+            authorRepository.createAuthor(authorsName);
+
+        }
+        Author author2 = authorRepository.findAuthorByName(authorsName);
         LocalDateTime created = LocalDateTime.now();
 
-        songRepository.createSong(title, author, tempo, mtrm, songKey, introChords, verseChords, reffChords, bridgeChords, songText, user, created);
+        songRepository.createSong(title, author2, tempo, mtrm, songKey, introChords, verseChords, reffChords, bridgeChords, songText, user, created);
 
         return "redirect:/song/list";
     }

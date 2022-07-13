@@ -37,12 +37,4 @@ public class AuthorController {
     }
 
 
-    public Author checkIfExists(String name){
-        Author author = authorRepository.findAuthorByName(name);
-        if(author != null){
-            return author;
-        }
-        authorRepository.createAuthor(name);
-        return author;
-    }
 }

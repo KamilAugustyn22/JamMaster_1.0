@@ -1,9 +1,11 @@
 package pl.coderslab.author;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import pl.coderslab.song.Song;
 
 import java.util.List;
@@ -11,6 +13,8 @@ import java.util.List;
 @Repository
 public interface AuthorRepository extends JpaRepository<Author, Long> {
 
+    @Modifying
+    @Transactional
     @Query(value = "INSERT INTO author(name)VALUES (:name);", nativeQuery = true)
     void createAuthor(@Param("name")String name);
 
