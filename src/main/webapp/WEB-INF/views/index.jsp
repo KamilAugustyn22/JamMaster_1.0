@@ -41,7 +41,7 @@
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
             <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
+                <i class="fas fa-guitar"></i>
             </div>
             <div class="sidebar-brand-text mx-3">Jam Master</div>
         </a>
@@ -52,7 +52,7 @@
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
             <a class="nav-link" href="/">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="fas fa-fw fa-home"></i>
                 <span>Strona główna</span></a>
         </li>
 
@@ -68,7 +68,7 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-cog"></i>
+                <i class="fas fa-fw fa-table"></i>
                 <span>Listy</span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -85,7 +85,7 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-wrench"></i>
+                <i class="fas fa-fw fa-plus"></i>
                 <span>Dodaj coś od siebie</span>
             </a>
             <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
@@ -94,18 +94,9 @@
                     <h6 class="collapse-header">Narzędzia użytkownika:</h6>
                     <a class="collapse-item" href="/song/add">Dodaj piosenkę</a>
                     <a class="collapse-item" href="/set/add">Stwórz set</a>
-                    <a class="collapse-item" href="/author/add">Dodaj autora</a>
                 </div>
             </div>
         </li>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            Addons
-        </div>
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
@@ -130,17 +121,13 @@
 
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-            <a class="nav-link" href="charts.html">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Wykresy</span></a>
+            <a class="nav-link" href="/session">
+                <i class="fas fa-fw fa-video"></i>
+                <span>Tryb Sesji</span></a>
         </li>
 
         <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="tables.html">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Tabele</span></a>
-        </li>
+
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
@@ -392,7 +379,7 @@
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">${liczbaPiosenek}</div>
                                     </div>
                                     <div class="col-auto">
-                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        <i class="fas fa-headphones fa-2x text-gray-300"></i>
                                     </div>
                                 </div>
                             </div>
@@ -410,7 +397,7 @@
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
                                     </div>
                                     <div class="col-auto">
-                                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        <i class="fas fa-music fa-2x text-gray-300"></i>
                                     </div>
                                 </div>
                             </div>
@@ -438,7 +425,7 @@
                                         </div>
                                     </div>
                                     <div class="col-auto">
-                                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                        <i class="fas fa-male fa-2x text-gray-300"></i>
                                     </div>
                                 </div>
                             </div>
@@ -456,7 +443,7 @@
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
                                     </div>
                                     <div class="col-auto">
-                                        <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
                                     </div>
                                 </div>
                             </div>
