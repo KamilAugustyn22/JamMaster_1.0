@@ -67,7 +67,7 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Wybierz listę:</h6>
-                    <a class="collapse-item" href="/author/list">Lista Autorów</a>
+                    <a class="collapse-item active" href="/author/list">Lista Autorów</a>
                     <a class="collapse-item" href="/set/list">Gotowe Sety</a>
                     <a class="collapse-item" href="/song/list">Lista Piosenek</a>
                 </div>
@@ -87,30 +87,16 @@
                     <h6 class="collapse-header">Narzędzia użytkownika:</h6>
                     <a class="collapse-item" href="/song/add">Dodaj piosenkę</a>
                     <a class="collapse-item" href="/set/add">Stwórz set</a>
-                    <a class="collapse-item" href="/author/add">Dodaj autora</a>
                 </div>
             </div>
         </li>
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-               aria-expanded="true" aria-controls="collapsePages">
-                <i class="fas fa-fw fa-folder"></i>
-                <span>Strony</span>
+            <a class="nav-link" href="/about">
+                <i class="fas fa-fw fa-tablet-alt"></i>
+                <span>O aplikacji</span>
             </a>
-            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Login Screens:</h6>
-                    <a class="collapse-item" href="login.html">Login</a>
-                    <a class="collapse-item" href="register.html">Rejestracja</a>
-                    <a class="collapse-item" href="forgot-password.html">Zapomniałem hasła</a>
-                    <div class="collapse-divider"></div>
-                    <h6 class="collapse-header">Inne strony:</h6>
-                    <a class="collapse-item" href="404.html">Błąd 404</a>
-                    <a class="collapse-item" href="blank.html">Pusta strona</a>
-                </div>
-            </div>
         </li>
 
 
