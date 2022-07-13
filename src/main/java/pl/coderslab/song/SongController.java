@@ -38,7 +38,6 @@ public class SongController {
         Author author = authorRepository.findAuthorByName(authorsName);
         if(author == null){
             authorRepository.createAuthor(authorsName);
-
         }
         Author author2 = authorRepository.findAuthorByName(authorsName);
         LocalDateTime created = LocalDateTime.now();
