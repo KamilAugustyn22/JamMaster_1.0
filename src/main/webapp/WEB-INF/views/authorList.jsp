@@ -114,9 +114,9 @@
         </li>
 
 
-        <!-- Nav Item - Tables -->
+        <!-- Tryb sesji -->
         <li class="nav-item">
-            <a class="nav-link" href="/session">
+            <a class="nav-link" href="/session/">
                 <i class="fas fa-fw fa-video"></i>
                 <span>Tryb Sesji</span></a>
         </li>

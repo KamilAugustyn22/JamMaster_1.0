@@ -1,4 +1,10 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: mac
+  Date: 06/07/2022
+  Time: 14:10
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,19 +17,16 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>JamMaster - Dodaj piosenkę</title>
+  <title>JamMaster - 404</title>
 
-  <!-- Custom fonts for this template -->
-  <link href="../vendor/fontawesome-free/css/all.css" rel="stylesheet" type="text/css">
+  <!-- Custom fonts for this template-->
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link
           href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
           rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="../css/sb-admin-2.css" rel="stylesheet">
-
-  <!-- Custom styles for this page -->
-  <link href="../vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -38,9 +41,9 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
       <div class="sidebar-brand-icon rotate-n-15">
-        <i class="fas fa-guitar"></i>
+        <i class="fas fa-laugh-wink"></i>
       </div>
-      <div class="sidebar-brand-text mx-3">Jam Master</div>
+      <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
     </a>
 
     <!-- Divider -->
@@ -49,76 +52,96 @@
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
       <a class="nav-link" href="/">
-        <i class="fas fa-fw fa-home"></i>
-        <span>Strona główna</span></a>
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Strona Główna</span>
+      </a>
     </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
 
     <!-- Heading -->
-
+    <div class="sidebar-heading">
+      Interface
+    </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
          aria-expanded="true" aria-controls="collapseTwo">
-        <i class="fas fa-fw fa-table"></i>
+        <i class="fas fa-fw fa-cog"></i>
         <span>Listy</span>
       </a>
       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Wybierz listę:</h6>
-          <a class="collapse-item" href="/author/list">Lista Autorów</a>
-          <a class="collapse-item" href="/set/list">Gotowe Sety</a>
-          <a class="collapse-item" href="/song/list">Lista Piosenek</a>
+          <a class="collapse-item" href="/author/list">Lista autorów</a>
+          <a class="collapse-item" href="/set/list">Gotowe sety</a>
+          <a class="collapse-item" href="/song/list">Lista piosenek</a>
         </div>
       </div>
     </li>
 
     <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item active">
+    <li class="nav-item">
       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
          aria-expanded="true" aria-controls="collapseUtilities">
-        <i class="fas fa-fw fa-plus"></i>
+        <i class="fas fa-fw fa-wrench"></i>
         <span>Dodaj coś od siebie</span>
       </a>
       <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
            data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Narzędzia użytkownika:</h6>
-          <a class="collapse-item active" href="/song/add">Dodaj piosenkę</a>
+          <a class="collapse-item" href="/song/add">Dodaj piosenkę</a>
           <a class="collapse-item" href="/set/add">Stwórz set</a>
+          <a class="collapse-item" href="/author/add">Dodaj autora</a>
         </div>
       </div>
     </li>
 
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+      Addons
+    </div>
+
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-         aria-expanded="true" aria-controls="collapsePages">
+    <li class="nav-item active">
+      <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
+         aria-controls="collapsePages">
         <i class="fas fa-fw fa-folder"></i>
-        <span>Strony</span>
+        <span>Pages</span>
       </a>
-      <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+      <div id="collapsePages" class="collapse show" aria-labelledby="headingPages"
+           data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Login Screens:</h6>
           <a class="collapse-item" href="login.html">Login</a>
-          <a class="collapse-item" href="register.html">Rejestracja</a>
-          <a class="collapse-item" href="forgot-password.html">Zapomniałem hasła</a>
+          <a class="collapse-item" href="register.html">Register</a>
+          <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
           <div class="collapse-divider"></div>
-          <h6 class="collapse-header">Inne strony:</h6>
-          <a class="collapse-item" href="404.html">Błąd 404</a>
-          <a class="collapse-item" href="blank.html">Pusta strona</a>
+          <h6 class="collapse-header">Other Pages:</h6>
+          <a class="collapse-item active" href="404.html">404 Page</a>
+          <a class="collapse-item" href="blank.html">Blank Page</a>
         </div>
       </div>
+    </li>
+
+    <!-- Nav Item - Charts -->
+    <li class="nav-item">
+      <a class="nav-link" href="charts.html">
+        <i class="fas fa-fw fa-chart-area"></i>
+        <span>Wykresy</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-      <a class="nav-link" href="/session/">
-        <i class="fas fa-fw fa-video"></i>
-        <span>Tryb Sesji</span></a>
+      <a class="nav-link" href="tables.html">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Tabele</span></a>
     </li>
 
     <!-- Divider -->
@@ -142,11 +165,9 @@
       <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
         <!-- Sidebar Toggle (Topbar) -->
-        <form class="form-inline">
-          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-          </button>
-        </form>
+        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+          <i class="fa fa-bars"></i>
+        </button>
 
         <!-- Topbar Search -->
         <form
@@ -280,7 +301,7 @@
               </a>
               <a class="dropdown-item d-flex align-items-center" href="#">
                 <div class="dropdown-list-image mr-3">
-                  <img class="rounded-circle" src="../img/undraw_profile_3.svg"
+                  <img class="rounded-circle" src="img/undraw_profile_3.svg"
                        alt="...">
                   <div class="status-indicator bg-warning"></div>
                 </div>
@@ -347,64 +368,12 @@
       <!-- Begin Page Content -->
       <div class="container-fluid">
 
-        <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Dodaj piosenkę</h1>
-        <p class="mb-4">Cieszymy się, że chcesz pomóc nam w rozwoju :) Wypełnij proszę formularz, a kiedy skończysz wciśnij przycisk "dodaj". </p>
-
-        <!-- DataTales Example -->
-        <div class="card shadow mb-4">
-          <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Formularz dodawania piosenki:</h6>
-          </div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <form action="/song/add" method="post">
-                  Tytuł: <input type="text" name="title" path="song.title">
-                  Autor: <input type="text" name="authorsName" path="song.author">
-                  Tempo: <input type="number" name="tempo" path="song.tempo">
-                  Metrum: <input type="text" name="mtrm" path="song.mtrm"><br/><br/>
-                  Tonacja: <select name="songKey" path="song.songKey">
-                            <optgroup label="Durowa">
-                              <option>C</option>
-                              <option>C#</option>
-                              <option>D</option>
-                              <option>D#</option>
-                              <option>E</option>
-                              <option>F</option>
-                              <option>F#</option>
-                              <option>G</option>
-                              <option>G#</option>
-                              <option>A</option>
-                              <option>B</option>
-                              <option>H</option>
-                            </optgroup>
-                            <optgroup label="Molowa">
-                              <option>c</option>
-                              <option>c#</option>
-                              <option>d</option>
-                              <option>d#</option>
-                              <option>e</option>
-                              <option>f</option>
-                              <option>f#</option>
-                              <option>g</option>
-                              <option>g#</option>
-                              <option>a</option>
-                              <option>b</option>
-                              <option>h</option>
-                            </optgroup>
-                </select>
-                  <br/><br/>
-                  Akordy: intro (oddziel spacją): <input type="text" name="introChords" path="song.introChords"><br/><br/>
-                  Akordy: zwrotka (oddziel spacją): <input type="text" name="verseChords" path="song.verseChords"><br/><br/>
-                  Akordy: refren (oddziel spacją): <input type="text" name="reffChords" path="song.reffChords"><br/><br/>
-                  Akordy: most (oddziel spacją): <input type="text" name="bridgeChords" path="song.bridgeChords"><br/><br/>
-                  Tekst: <textarea name="songText" style="height: 200px; width:500px" path="song.songText"></textarea><br/><br/>
-                  <input type="submit" onclick="alert('Dodano piosenkę!')" value="Dodaj!">
-                </form>
-              </table>
-            </div>
-          </div>
+        <!-- 404 Error Text -->
+        <div class="text-center">
+          <div class="error mx-auto" data-text="404">404</div>
+          <p class="lead text-gray-800 mb-5">Page Not Found</p>
+          <p class="text-gray-500 mb-0">It looks like you found a glitch in the matrix...</p>
+          <a href="/">&larr; Back to Dashboard</a>
         </div>
 
       </div>
@@ -455,21 +424,14 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="../vendor/jquery/jquery.js"></script>
-<script src="../vendor/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="../vendor/jquery-easing/jquery.easing.js"></script>
+<script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="../js/sb-admin-2.js"></script>
-
-<!-- Page level plugins -->
-<script src="../vendor/datatables/jquery.dataTables.js"></script>
-<script src="../vendor/datatables/dataTables.bootstrap4.js"></script>
-
-<!-- Page level custom scripts -->
-<script src="../js/demo/datatables-demo.js"></script>
+<script src="../js/sb-admin-2.min.js"></script>
 
 </body>
 
