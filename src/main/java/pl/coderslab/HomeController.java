@@ -29,6 +29,9 @@ public class HomeController {
     public String home(Model model){
         model.addAttribute("liczbaPiosenek",songRepository.countAllSongs());
         model.addAttribute("authorsNumber",authorRepository.countAuthors());
+        model.addAttribute("usersSongs", songRepository.countSongsByUser(1));
+        User user = userRepository.readUserById(1);
+        model.addAttribute("userNameAndSurname", user.getName() +" "+ user.getSurname());
         Song lastSong = songRepository.findLastSong();
         model.addAttribute("title", lastSong.getTitle());
         model.addAttribute("author", lastSong.getAuthor());
@@ -52,7 +55,9 @@ public class HomeController {
         return "login";
     }
     @RequestMapping("/about")
-    public String aboutUs(){
+    public String aboutUs(Model model){
+        User user = userRepository.readUserById(1);
+        model.addAttribute("userNameAndSurname", user.getName() +" "+ user.getSurname());
         return "about";
     }
 }

@@ -309,7 +309,7 @@
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">${userNameAndSurname}</span>
                             <img class="img-profile rounded-circle"
                                  src="../img/undraw_profile.svg">
                         </a>
@@ -378,7 +378,7 @@
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                             Liczba piosenek dodanych przez Ciebie</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">${usersSongs}</div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-music fa-2x text-gray-300"></i>
@@ -500,10 +500,6 @@
                                 </div>
                                 </a>
                             </div>
-
-
-
-
                         </div>
 
                     </div>
@@ -521,8 +517,8 @@
                                          src="../img/undraw_posting_photo.svg" alt="...">
                                 </div>
                                 <p>Naszą misją jest ułatwienie życia jak największej liczbie muzyków. W tym celu stworzyliśmy
-                                tę aplikację. Staramy się na bieżąco dodawać do niej nowe funkcjonalności oraz poprawiać już istniejące</p>
-                                <a target="_blank" rel="nofollow" href="/about">Więcej o aplikacji &rarr;</a>
+                                tę aplikację. Staramy się na bieżąco dodawać do niej nowe funkcjonalności oraz poprawiać już istniejące...</p>
+                                <a rel="nofollow" href="/about">Więcej o aplikacji &rarr;</a>
                             </div>
                         </div>
                     </div>
