@@ -53,10 +53,18 @@ public class SongController {
         return "songList";
     }
 
-    @RequestMapping(value = "details?ID=:id")
-    @ResponseBody
-    public String songDetails(@PathVariable("id")long id){
+    @RequestMapping(value = "/details/{id}")
+    public String songDetails(Model model, @PathVariable("id")long id){
 
-        return "TU KIEDYŚ BĘDĄ SZCZEGÓŁY PIOSENKI";
+        Song song = songRepository.findSongById(id);
+        model.addAttribute("author", song.getAuthor());
+        model.addAttribute("title", song.getTitle());
+        model.addAttribute("tempo", song.getTempo());
+        model.addAttribute("introChords", song.getIntroChords());
+        model.addAttribute("verseChords", song.getVerseChords());
+        model.addAttribute("reffChords", song.getReffChords());
+        model.addAttribute("bridgeChords", song.getBridgeChords());
+        model.addAttribute("text", song.getSongText());
+        return "songDetails";
     }
 }

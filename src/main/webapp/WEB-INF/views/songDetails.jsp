@@ -1,4 +1,10 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: mac
+  Date: 13/07/2022
+  Time: 16:33
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +17,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>JamMaster - Lista Piosenek</title>
+    <title>JamMaster - Szczegóły piosenki</title>
 
     <!-- Custom fonts for this template -->
     <link href="../vendor/fontawesome-free/css/all.css" rel="stylesheet" type="text/css">
@@ -56,6 +62,8 @@
         <!-- Divider -->
         <hr class="sidebar-divider">
 
+        <!-- Heading -->
+
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item active">
@@ -90,6 +98,7 @@
                 </div>
             </div>
         </li>
+
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
             <a class="nav-link" href="/about">
@@ -332,46 +341,28 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Lista piosenek</h1>
-                <a href="/song/add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                        class="fas fa-plus-square fa-sm text-white-50"></i> Dodaj piosenkę </a>
-            </div>
+                <h1 class="h3 mb-2 text-gray-800">Szczegóły piosenki</h1>
 
 
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Piosenki</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">${author} - ${title}</h6>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Tytuł</th>
-                                    <th>Tonacja</th>
-                                    <th>Metrum</th>
-                                    <th>Dodano</th>
-                                    <th>Autor</th>
-                                    <th>Akcje</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                    <c:forEach var="song" items="${songs}">
-                                        <tr>
-                                            <th>${song.getId()}</th>
-                                            <th>${song.getTitle()}</th>
-                                            <th>${song.getSongKey()}</th>
-                                            <th>${song.getMtrm()}</th>
-                                            <th>${song.getCreatedOn()}</th>
-                                            <th>${song.getAuthor()}</th>
-                                            <th><a href="/song/details/${song.getId()}">Szczegóły</a> </th>
-                                        </tr>
-                                    </c:forEach>
-                                </tbody>
-                            </table>
+                            <p> Tempo: ${tempo} BPM</p>
+                            <div id="chords">
+                            <p> Intro: ${introChords}</p>
+                            <p> Zwrotka: ${verseChords}</p>
+                            <p> Refren: ${reffChords}</p>
+                            <p> Most: ${bridgeChords}</p>
+                            </div>
+
+                            <div id="songText">
+                                Tekst: <br/>
+                                ${text}
+                            </div>
                         </div>
                     </div>
                 </div>

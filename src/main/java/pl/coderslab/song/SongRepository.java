@@ -38,4 +38,6 @@ public interface SongRepository extends JpaRepository<Song, Long> {
     Integer countAllSongs();
     @Query(value = "SELECT * FROM song ORDER BY ID desc LIMIT 1", nativeQuery = true)
     Song findLastSong();
+    @Query("select s from Song s where s.id = :id")
+    Song findSongById(@Param("id") long id);
 }

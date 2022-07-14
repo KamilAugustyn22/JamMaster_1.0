@@ -362,7 +362,7 @@
                     <th>${song.getSongKey()}</th>
                     <th>${song.getMtrm()}</th>
                     <th>${song.getCreatedOn()}</th>
-                    <th><a href="/song/details?ID=${song.getId()}">Szczegóły</a> </th>
+                    <th><a href="/song/details/${song.getId()}">Szczegóły</a> </th>
                   </tr>
                 </c:forEach>
                 </tbody>
