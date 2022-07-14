@@ -3,6 +3,8 @@ package pl.coderslab.set;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import pl.coderslab.song.Song;
+import pl.coderslab.song.SongRepository;
 import pl.coderslab.user.User;
 import pl.coderslab.user.UserRepository;
 
@@ -12,10 +14,12 @@ import pl.coderslab.user.UserRepository;
 public class SongSetController {
     private final UserRepository userRepository;
     private final SongSetRepository songSetRepository;
+    private final SongRepository songRepository;
 
-    public SongSetController(UserRepository userRepository, SongSetRepository songSetRepository) {
+    public SongSetController(UserRepository userRepository, SongSetRepository songSetRepository, SongRepository songRepository) {
         this.userRepository = userRepository;
         this.songSetRepository = songSetRepository;
+        this.songRepository = songRepository;
     }
 
     @RequestMapping("/list")
@@ -48,5 +52,37 @@ public class SongSetController {
         model.addAttribute("setId", songSet.getId());
         model.addAttribute("songs", songSet.getSongList());
         return "setDetails";
+    }
+
+    @RequestMapping("/{id}/addsong")
+    public String addSongToSet(Model model, @PathVariable("id") long id){
+        User user = userRepository.readUserById(1);
+        model.addAttribute("userNameAndSurname", user.getName() +" "+ user.getSurname());
+        model.addAttribute("songs", songRepository.findAllSongs());
+        model.addAttribute("setId", id);
+
+        return "addSongToSet";
+    }
+    @RequestMapping("/{setId}/{songId}")
+    public String addSongToSetAction(@PathVariable("setId")long setId, @PathVariable("songId")long songId){
+        songSetRepository.addSongToSet(setId, songId);
+        return "redirect:/set/songlist/"+setId;
+    }
+    @GetMapping("/{setId}/remove/{songId}")
+    public String deleteSongFromSetView(Model model, @PathVariable("setId")long setId, @PathVariable("songId")long songId){
+        User user = userRepository.readUserById(1);
+        model.addAttribute("userNameAndSurname", user.getName() +" "+ user.getSurname());
+        model.addAttribute("setId", setId);
+        model.addAttribute("songId", songId);
+        Song song = songRepository.readSongById(songId);
+        model.addAttribute("songAuthor", song.getAuthor());
+        model.addAttribute("songTitle", song.getTitle());
+        return "deleteSongFromSet";
+    }
+    @PostMapping("/{setId}/remove/{songId}")
+    public String deleteSongFromSet(@PathVariable("setId")long setId, @PathVariable("songId")long songId){
+        songSetRepository.deleteSongFromSet(setId, songId);
+
+        return "redirect:/set/songlist/"+setId;
     }
 }

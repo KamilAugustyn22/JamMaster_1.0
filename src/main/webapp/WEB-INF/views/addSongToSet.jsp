@@ -11,19 +11,19 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>JamMaster - Lista Setów</title>
+  <title>JamMaster - Dodaj do setu</title>
 
   <!-- Custom fonts for this template -->
-  <link href="../vendor/fontawesome-free/css/all.css" rel="stylesheet" type="text/css">
+  <link href="/vendor/fontawesome-free/css/all.css" rel="stylesheet" type="text/css">
   <link
           href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
           rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="../css/sb-admin-2.css" rel="stylesheet">
+  <link href="/css/sb-admin-2.css" rel="stylesheet">
 
   <!-- Custom styles for this page -->
-  <link href="../vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <link href="/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
 </head>
 
@@ -68,8 +68,8 @@
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Wybierz listę:</h6>
           <a class="collapse-item" href="/author/list">Lista Autorów</a>
-          <a class="collapse-item active" href="/set/list">Gotowe Sety</a>
-          <a class="collapse-item" href="/song/list">Lista Piosenek</a>
+          <a class="collapse-item" href="/set/list">Gotowe Sety</a>
+          <a class="collapse-item active" href="/song/list">Lista Piosenek</a>
         </div>
       </div>
     </li>
@@ -90,15 +90,13 @@
         </div>
       </div>
     </li>
-
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link " href="/about">
+      <a class="nav-link" href="/about">
         <i class="fas fa-fw fa-tablet-alt"></i>
         <span>O aplikacji</span>
       </a>
     </li>
-
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
@@ -138,7 +136,7 @@
         <form
                 class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
           <div class="input-group">
-            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+            <input type="text" class="form-control bg-light border-0 small" placeholder="Wyszukaj..."
                    aria-label="Search" aria-describedby="basic-addon2">
             <div class="input-group-append">
               <button class="btn btn-primary" type="button">
@@ -242,7 +240,7 @@
               </h6>
               <a class="dropdown-item d-flex align-items-center" href="#">
                 <div class="dropdown-list-image mr-3">
-                  <img class="rounded-circle" src="../img/undraw_profile_1.svg"
+                  <img class="rounded-circle" src="/img/undraw_profile_1.svg"
                        alt="...">
                   <div class="status-indicator bg-success"></div>
                 </div>
@@ -254,7 +252,7 @@
               </a>
               <a class="dropdown-item d-flex align-items-center" href="#">
                 <div class="dropdown-list-image mr-3">
-                  <img class="rounded-circle" src="../img/undraw_profile_2.svg"
+                  <img class="rounded-circle" src="/img/undraw_profile_2.svg"
                        alt="...">
                   <div class="status-indicator"></div>
                 </div>
@@ -266,7 +264,7 @@
               </a>
               <a class="dropdown-item d-flex align-items-center" href="#">
                 <div class="dropdown-list-image mr-3">
-                  <img class="rounded-circle" src="../img/undraw_profile_3.svg"
+                  <img class="rounded-circle" src="/img/undraw_profile_3.svg"
                        alt="...">
                   <div class="status-indicator bg-warning"></div>
                 </div>
@@ -300,27 +298,27 @@
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="mr-2 d-none d-lg-inline text-gray-600 small">${userNameAndSurname}</span>
               <img class="img-profile rounded-circle"
-                   src="../img/undraw_profile.svg">
+                   src="/img/undraw_profile.svg">
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                  aria-labelledby="userDropdown">
               <a class="dropdown-item" href="#">
                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                Profile
+                Mój profil
               </a>
               <a class="dropdown-item" href="#">
                 <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                Settings
+                Ustawienia
               </a>
               <a class="dropdown-item" href="#">
                 <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                Activity Log
+                Ostatnia aktywność
               </a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                Logout
+                Wyloguj
               </a>
             </div>
           </li>
@@ -335,15 +333,16 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-          <h1 class="h3 mb-0 text-gray-800">Lista Setów</h1>
-          <a href="/set/add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                  class="fas fa-plus-square fa-sm text-white-50"></i> Stwórz nowy set </a>
+          <h1 class="h3 mb-0 text-gray-800">Lista piosenek</h1>
+          <a href="/song/add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                  class="fas fa-plus-square fa-sm text-white-50"></i> Dodaj piosenkę </a>
         </div>
+
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
           <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Twoje sety:</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Piosenki</h6>
           </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -351,26 +350,28 @@
                 <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Nazwa</th>
+                  <th>Tytuł</th>
+                  <th>Tonacja</th>
+                  <th>Metrum</th>
+                  <th>Dodano</th>
+                  <th>Autor</th>
                   <th>Akcje</th>
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${sets}" var="set">
-                <tr>
-                  <th>${set.getId()}</th>
-                  <th>${set.getName()}</th>
-                  <th>
-                    <a href="/set/songlist/${set.getId()}"class="btn btn-info btn-icon-split">
-                    <span class="icon text-white-50"><i class="fas fa-info-circle"></i></span>
-                    <span class="text">Szczegóły</span></a>
-                    <a href="/set/delete/${set.getId()}" class="btn btn-danger btn-icon-split">
-                      <span class="icon text-white-50"><i class="fas fa-trash"></i></span>
-                      <span class="text">Usuń set</span>
-                    </a>
-                  </th>
-
-                </tr>
+                <c:forEach var="song" items="${songs}">
+                  <tr>
+                    <th>${song.getId()}</th>
+                    <th>${song.getTitle()}</th>
+                    <th>${song.getSongKey()}</th>
+                    <th>${song.getMtrm()}</th>
+                    <th>${song.getCreatedOn()}</th>
+                    <th>${song.getAuthor()}</th>
+                    <th><a href="/set/${setId}/${song.getId()}" class="btn btn-info btn-icon-split">
+                      <span class="icon text-white-50"><i class="fas fa-plus"></i></span>
+                      <span class="text">Dodaj</span>
+                    </a></th>
+                  </tr>
                 </c:forEach>
                 </tbody>
               </table>
@@ -426,21 +427,21 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="../vendor/jquery/jquery.js"></script>
-<script src="../vendor/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="/vendor/jquery/jquery.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.js"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="../vendor/jquery-easing/jquery.easing.js"></script>
+<script src="/vendor/jquery-easing/jquery.easing.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="../js/sb-admin-2.js"></script>
+<script src="/js/sb-admin-2.js"></script>
 
 <!-- Page level plugins -->
-<script src="../vendor/datatables/jquery.dataTables.js"></script>
-<script src="../vendor/datatables/dataTables.bootstrap4.js"></script>
+<script src="/vendor/datatables/jquery.dataTables.js"></script>
+<script src="/vendor/datatables/dataTables.bootstrap4.js"></script>
 
 <!-- Page level custom scripts -->
-<script src="../js/demo/datatables-demo.js"></script>
+<script src="/js/demo/datatables-demo.js"></script>
 
 </body>
 

@@ -75,8 +75,8 @@
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Wybierz listę:</h6>
           <a class="collapse-item" href="/author/list">Lista Autorów</a>
-          <a class="collapse-item" href="/set/list">Gotowe Sety</a>
-          <a class="collapse-item active" href="/song/list">Lista Piosenek</a>
+          <a class="collapse-item active" href="/set/list">Gotowe Sety</a>
+          <a class="collapse-item" href="/song/list">Lista Piosenek</a>
         </div>
       </div>
     </li>
@@ -341,7 +341,7 @@
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
           <h1 class="h3 mb-0 text-gray-800">Lista piosenek: ${setName}</h1>
-          <a href="/set/addsong" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+          <a href="/set/${setId}/addsong" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                   class="fas fa-plus-square fa-sm text-white-50"></i> Dodaj piosenkę do setu </a>
           <a href="/set/generate/${setId}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                   class="fas fa-plus-square fa-sm text-white-50"></i> Generuj losowo </a>
@@ -362,7 +362,6 @@
                   <th>Tytuł</th>
                   <th>Tonacja</th>
                   <th>Metrum</th>
-                  <th>Dodano</th>
                   <th>Autor</th>
                   <th>Akcje</th>
                 </tr>
@@ -374,9 +373,13 @@
                     <th>${song.getTitle()}</th>
                     <th>${song.getSongKey()}</th>
                     <th>${song.getMtrm()}</th>
-                    <th>${song.getCreatedOn()}</th>
                     <th>${song.getAuthor()}</th>
-                    <th><a href="/song/details/${song.getId()}">Szczegóły</a> </th>
+                    <th><a href="/song/details/${song.getId()}"class="btn btn-info btn-circle btn-sm">
+                      <span class="icon text-white-50"><i class="fas fa-info-circle"></i></span></a>
+
+                      <a href="/set/${setId}/remove/${song.getId()}"class="btn btn-danger btn-circle btn-sm">
+                      <span class="icon text-white-50"><i class="fas fa-trash"></i></span></a>
+                    </th>
                   </tr>
                 </c:forEach>
                 </tbody>

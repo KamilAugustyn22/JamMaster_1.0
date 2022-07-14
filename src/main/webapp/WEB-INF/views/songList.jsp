@@ -367,7 +367,10 @@
                                             <th>${song.getMtrm()}</th>
                                             <th>${song.getCreatedOn()}</th>
                                             <th>${song.getAuthor()}</th>
-                                            <th><a href="/song/details/${song.getId()}">Szczegóły</a> </th>
+                                            <th><a href="/song/details/${song.getId()}" class="btn btn-info btn-icon-split">
+                                                <span class="icon text-white-50"><i class="fas fa-info-circle"></i></span>
+                                                <span class="text">Szczegóły</span>
+                                            </a></th>
                                         </tr>
                                     </c:forEach>
                                 </tbody>

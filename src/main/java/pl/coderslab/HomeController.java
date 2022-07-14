@@ -1,16 +1,19 @@
 package pl.coderslab;
 
+import org.springframework.boot.web.servlet.server.Session;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import pl.coderslab.author.AuthorRepository;
 import pl.coderslab.set.SongSetRepository;
 import pl.coderslab.song.Song;
 import pl.coderslab.song.SongRepository;
 import pl.coderslab.user.User;
 import pl.coderslab.user.UserRepository;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.util.List;
 
 
 @Controller
@@ -54,9 +57,29 @@ public class HomeController {
         userRepository.createUser(user.getName(), user.getSurname(), user.getEmail(),user.getUsername(), user.getPassword());
         return "redirect:/login";
     }
-    @RequestMapping("/login")
-    public String login(){
+    @GetMapping("/login")
+    public String loginForm(){
         return "login";
+    }
+
+    @PostMapping("/login")
+    public String login(@RequestParam String email, @RequestParam String password, HttpServletRequest request){
+        List<User>users = userRepository.findAllUsers();
+        long id = 0;
+        for(User user : users){
+            if(user.getEmail().equals(email) && user.getPassword().equals(password)){
+                id = user.getId();
+            }
+        }
+        if(id == 0){
+            return "login";
+        }
+        User user = userRepository.readUserById(id);
+        HttpSession session = request.getSession();
+        session.setAttribute("firstName", user.getName());
+        session.setAttribute("lastName", user.getSurname());
+        session.setAttribute("id", user.getId());
+        return "redirect:/";
     }
     @RequestMapping("/about")
     public String aboutUs(Model model){

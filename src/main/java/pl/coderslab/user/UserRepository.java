@@ -28,4 +28,5 @@ public interface UserRepository extends JpaRepository<User, Long> {
                     @Param("surname")String surname, @Param("email")String email, @Param("password")String password);
 
     void deleteUserById(long id);
+
 }
