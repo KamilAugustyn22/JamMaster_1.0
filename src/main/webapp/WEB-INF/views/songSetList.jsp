@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +38,7 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
       <div class="sidebar-brand-icon rotate-n-15">
-        <i class="fas fa-laugh-wink"></i>
+        <i class="fas fa-guitar"></i>
       </div>
       <div class="sidebar-brand-text mx-3">Jam Master</div>
     </a>
@@ -48,30 +49,26 @@
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
       <a class="nav-link" href="/">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <i class="fas fa-fw fa-home"></i>
         <span>Strona główna</span></a>
     </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <!-- Heading -->
-    <div class="sidebar-heading">
-      Interface
-    </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item active">
       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
          aria-expanded="true" aria-controls="collapseTwo">
-        <i class="fas fa-fw fa-cog"></i>
+        <i class="fas fa-fw fa-table"></i>
         <span>Listy</span>
       </a>
       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Wybierz listę:</h6>
           <a class="collapse-item" href="/author/list">Lista Autorów</a>
-          <a class="collapse-item" href="/set/list">Gotowe Sety</a>
+          <a class="collapse-item active" href="/set/list">Gotowe Sety</a>
           <a class="collapse-item" href="/song/list">Lista Piosenek</a>
         </div>
       </div>
@@ -81,7 +78,7 @@
     <li class="nav-item">
       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
          aria-expanded="true" aria-controls="collapseUtilities">
-        <i class="fas fa-fw fa-wrench"></i>
+        <i class="fas fa-fw fa-plus"></i>
         <span>Dodaj coś od siebie</span>
       </a>
       <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
@@ -90,52 +87,24 @@
           <h6 class="collapse-header">Narzędzia użytkownika:</h6>
           <a class="collapse-item" href="/song/add">Dodaj piosenkę</a>
           <a class="collapse-item" href="/set/add">Stwórz set</a>
-          <a class="collapse-item" href="/author/add">Dodaj autora</a>
         </div>
       </div>
     </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Heading -->
-    <div class="sidebar-heading">
-      Addons
-    </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-         aria-expanded="true" aria-controls="collapsePages">
-        <i class="fas fa-fw fa-folder"></i>
-        <span>Strony</span>
+      <a class="nav-link " href="/about">
+        <i class="fas fa-fw fa-tablet-alt"></i>
+        <span>O aplikacji</span>
       </a>
-      <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-          <h6 class="collapse-header">Login Screens:</h6>
-          <a class="collapse-item" href="login.html">Login</a>
-          <a class="collapse-item" href="register.html">Rejestracja</a>
-          <a class="collapse-item" href="forgot-password.html">Zapomniałem hasła</a>
-          <div class="collapse-divider"></div>
-          <h6 class="collapse-header">Inne strony:</h6>
-          <a class="collapse-item" href="404.html">Błąd 404</a>
-          <a class="collapse-item" href="blank.html">Pusta strona</a>
-        </div>
-      </div>
     </li>
 
-    <!-- Nav Item - Charts -->
-    <li class="nav-item">
-      <a class="nav-link" href="charts.html">
-        <i class="fas fa-fw fa-chart-area"></i>
-        <span>Wykresy</span></a>
-    </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-      <a class="nav-link" href="tables.html">
-        <i class="fas fa-fw fa-table"></i>
-        <span>Tabele</span></a>
+      <a class="nav-link" href="/session/">
+        <i class="fas fa-fw fa-video"></i>
+        <span>Tryb Sesji</span></a>
     </li>
 
     <!-- Divider -->
@@ -329,7 +298,7 @@
           <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+              <span class="mr-2 d-none d-lg-inline text-gray-600 small">${userNameAndSurname}</span>
               <img class="img-profile rounded-circle"
                    src="../img/undraw_profile.svg">
             </a>
@@ -371,40 +340,26 @@
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
           <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Lista setów</h6>
           </div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>Position</th>
-                  <th>Office</th>
-                  <th>Age</th>
-                  <th>Start date</th>
-                  <th>Salary</th>
+                  <th>ID</th>
+                  <th>Nazwa</th>
+                  <th>Akcje</th>
                 </tr>
                 </thead>
-                <tfoot>
-                <tr>
-                  <th>Name</th>
-                  <th>Position</th>
-                  <th>Office</th>
-                  <th>Age</th>
-                  <th>Start date</th>
-                  <th>Salary</th>
-                </tr>
-                </tfoot>
                 <tbody>
+                <c:forEach items="${sets}" var="set">
                 <tr>
-                  <td>Tiger Nixon</td>
-                  <td>System Architect</td>
-                  <td>Edinburgh</td>
-                  <td>61</td>
-                  <td>2011/04/25</td>
-                  <td>$320,800</td>
+                  <th>${set.getId()}</th>
+                  <th>${set.getName()}</th>
+                  <th><a href="/set/details/${set.getId()}">Szczegóły</a></th>
                 </tr>
+                </c:forEach>
                 </tbody>
               </table>
             </div>
