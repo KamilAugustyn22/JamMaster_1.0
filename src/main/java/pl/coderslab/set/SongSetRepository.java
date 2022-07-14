@@ -20,8 +20,11 @@ public interface SongSetRepository extends JpaRepository<SongSet, Long> {
 
     SongSet readSongSetById(long id);
 
-    @Query("select s from SongSet s")
-    List<SongSet> findAllSets();
+    @Query("select s from SongSet s where s.user.id = :id")
+    List<SongSet> findAllSets(@Param("id")long id);
+
+    @Query("select count(s) from SongSet s WHERE s.user.id = :id")
+    Integer countAllByUser(@Param("id")long id);
 
 
     void deleteById(long id);
