@@ -354,8 +354,8 @@
                             <p> Tempo: ${tempo} BPM</p>
                             <div id="chords">
                                 TRANSPOZYCJA:
-                                <button value="+" class="btn transpose-btn">+</button>
-                                <button value="-" class="btn transpose-btn">-</button><br/>
+                                <button value="+" class="btn transpose-btn btn-circle btn-sm text-white-50" style="background-color: #4c77ea">+</button>
+                                <button value="-" class="btn transpose-btn btn-circle btn-sm text-white-50" style="background-color: #4C77EAFF">-</button><br/>
                              Intro: <span class="intro-chords">${introChords}</span><br/>
                              Zwrotka: <span class="verse-chords">${verseChords}</span><br/>
                              Refren: <span class="reff-chords">${reffChords}</span><br/>
