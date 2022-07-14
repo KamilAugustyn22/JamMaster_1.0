@@ -11,7 +11,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>JamMaster - Lista Setów</title>
+  <title>JamMaster - Dodaj piosenkę</title>
 
   <!-- Custom fonts for this template -->
   <link href="../vendor/fontawesome-free/css/all.css" rel="stylesheet" type="text/css">
@@ -56,9 +56,11 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
+    <!-- Heading -->
+
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item active">
+    <li class="nav-item">
       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
          aria-expanded="true" aria-controls="collapseTwo">
         <i class="fas fa-fw fa-table"></i>
@@ -68,14 +70,14 @@
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Wybierz listę:</h6>
           <a class="collapse-item" href="/author/list">Lista Autorów</a>
-          <a class="collapse-item active" href="/set/list">Gotowe Sety</a>
+          <a class="collapse-item" href="/set/list">Gotowe Sety</a>
           <a class="collapse-item" href="/song/list">Lista Piosenek</a>
         </div>
       </div>
     </li>
 
     <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item">
+    <li class="nav-item active">
       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
          aria-expanded="true" aria-controls="collapseUtilities">
         <i class="fas fa-fw fa-plus"></i>
@@ -85,7 +87,7 @@
            data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Narzędzia użytkownika:</h6>
-          <a class="collapse-item" href="/song/add">Dodaj piosenkę</a>
+          <a class="collapse-item active" href="/song/add">Dodaj piosenkę</a>
           <a class="collapse-item" href="/set/add">Stwórz set</a>
         </div>
       </div>
@@ -93,12 +95,11 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link " href="/about">
+      <a class="nav-link" href="/about" >
         <i class="fas fa-fw fa-tablet-alt"></i>
         <span>O aplikacji</span>
       </a>
     </li>
-
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
@@ -334,36 +335,21 @@
       <div class="container-fluid">
 
         <!-- Page Heading -->
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-          <h1 class="h3 mb-0 text-gray-800">Lista Setów</h1>
-          <a href="/set/add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                  class="fas fa-plus-square fa-sm text-white-50"></i> Stwórz nowy set </a>
-        </div>
+        <h1 class="h3 mb-2 text-gray-800">Stwórz set</h1>
+        <p class="mb-4">Aby stworzyć set wpisz proszę w formularzu nazwę, a kiedy skończysz wciśnij przycisk "stwórz". </p>
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
           <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Twoje sety:</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Formularz tworzenia setu:</h6>
           </div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Nazwa</th>
-                  <th>Akcje</th>
-                </tr>
-                </thead>
-                <tbody>
-                <c:forEach items="${sets}" var="set">
-                <tr>
-                  <th>${set.getId()}</th>
-                  <th>${set.getName()}</th>
-                  <th><a href="/set/details/${set.getId()}">Szczegóły</a></th>
-                </tr>
-                </c:forEach>
-                </tbody>
+                <form action="/set/add" method="post">
+                  Nazwa: <input type="text" name="name">
+                  <input type="submit" onclick="alert('Stworzono set!')" value="Stwórz!">
+                </form>
               </table>
             </div>
           </div>
