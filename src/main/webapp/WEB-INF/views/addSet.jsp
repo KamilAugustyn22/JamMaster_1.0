@@ -87,8 +87,8 @@
            data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Narzędzia użytkownika:</h6>
-          <a class="collapse-item active" href="/song/add">Dodaj piosenkę</a>
-          <a class="collapse-item" href="/set/add">Stwórz set</a>
+          <a class="collapse-item" href="/song/add">Dodaj piosenkę</a>
+          <a class="collapse-item active" href="/set/add">Stwórz set</a>
         </div>
       </div>
     </li>
