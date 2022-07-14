@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 import pl.coderslab.user.User;
 import pl.coderslab.user.UserRepository;
 
-import java.util.List;
 
 @Controller
 @RequestMapping("/set")
@@ -40,8 +39,14 @@ public class SongSetController {
         songSetRepository.createSet(user, name);
         return "redirect:/set/list";
     }
-    @RequestMapping("/details/{id}")
+    @RequestMapping("/songlist/{id}")
     public String songSetDetails(Model model, @PathVariable("id") long id){
+        User user = userRepository.readUserById(1);
+        SongSet songSet = songSetRepository.readSongSetById(id);
+        model.addAttribute("userNameAndSurname", user.getName() +" "+ user.getSurname());
+        model.addAttribute("setName", songSet.getName());
+        model.addAttribute("setId", songSet.getId());
+        model.addAttribute("songs", songSet.getSongList());
         return "setDetails";
     }
 }
