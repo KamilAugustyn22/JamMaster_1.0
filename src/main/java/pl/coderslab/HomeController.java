@@ -87,4 +87,9 @@ public class HomeController {
         model.addAttribute("userNameAndSurname", user.getName() +" "+ user.getSurname());
         return "about";
     }
+
+    @RequestMapping("/forgot-password")
+    public String forgotPassword(){
+        return "forgotPassword";
+    }
 }
