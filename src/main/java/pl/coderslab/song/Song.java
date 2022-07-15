@@ -25,6 +25,7 @@ public class Song {
     private String verseChords;
     private String reffChords;
     private String bridgeChords;
+    @NotBlank
     private String songText;
     private int tempo;
     private String mtrm;
