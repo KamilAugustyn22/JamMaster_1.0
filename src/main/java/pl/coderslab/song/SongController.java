@@ -28,7 +28,7 @@ public class SongController {
     public String addSongForm(Model model){
         User user = userRepository.readUserById(1);
         model.addAttribute("userNameAndSurname", user.getName() +" "+ user.getSurname());
-        return "addSong";
+        return "song/addSong";
     }
     @PostMapping(value = "/add")
     public String addSong(@RequestParam String title,@RequestParam String authorsName, @RequestParam Integer tempo,
@@ -55,7 +55,7 @@ public class SongController {
         model.addAttribute("songs",songRepository.findAllSongs());
         User user = userRepository.readUserById(1);
         model.addAttribute("userNameAndSurname", user.getName() +" "+ user.getSurname());
-        return "songList";
+        return "song/songList";
     }
 
     @RequestMapping(value = "/details/{id}")
@@ -72,6 +72,6 @@ public class SongController {
         model.addAttribute("reffChords", song.getReffChords());
         model.addAttribute("bridgeChords", song.getBridgeChords());
         model.addAttribute("text", song.getSongText());
-        return "songDetails";
+        return "song/songDetails";
     }
 }
