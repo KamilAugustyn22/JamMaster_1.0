@@ -25,7 +25,6 @@ for (const button of buttons){
         let newBridge = [];
 
         if(button.value === "+"){
-             //intro
             for(let i = 0; i<introChordsArr.length; i++){
                 for(let j = 0; j<chordsMinor.length; j++){
                     if(introChordsArr[i] === chordsMinor[j]){
@@ -36,7 +35,6 @@ for (const button of buttons){
                     }
                 }
             }
-            //verse
             for(let i = 0; i<verseChordsArr.length; i++){
                 for(let j = 0; j<chordsMinor.length; j++){
                     if(verseChordsArr[i] === chordsMinor[j]){
@@ -47,7 +45,6 @@ for (const button of buttons){
                     }
                 }
             }
-            //reffrain
             for(let i = 0; i<reffChordsArr.length; i++){
                 for(let j = 0; j<chordsMinor.length; j++){
                     if(reffChordsArr[i] === chordsMinor[j]){
@@ -58,7 +55,6 @@ for (const button of buttons){
                     }
                 }
             }
-            //bridge
             for(let i = 0; i<bridgeChordsArr.length; i++){
                 for(let j = 0; j<chordsMinor.length; j++){
                     if(bridgeChordsArr[i] === chordsMinor[j]){
@@ -79,7 +75,6 @@ for (const button of buttons){
             bridgeChords.innerText = bridge;
         }
         if(button.value === "-"){
-            //intro
             for(let i = 0; i<introChordsArr.length; i++){
                 for(let j = 0; j<chordsMinor.length; j++){
                     if(introChordsArr[i] === chordsMinor[j]){
@@ -90,7 +85,6 @@ for (const button of buttons){
                     }
                 }
             }
-            //verse
             for(let i = 0; i<verseChordsArr.length; i++){
                 for(let j = 0; j<chordsMinor.length; j++){
                     if(verseChordsArr[i] === chordsMinor[j]){
@@ -101,7 +95,6 @@ for (const button of buttons){
                     }
                 }
             }
-            //reffrain
             for(let i = 0; i<reffChordsArr.length; i++){
                 for(let j = 0; j<chordsMinor.length; j++){
                     if(reffChordsArr[i] === chordsMinor[j]){
@@ -112,7 +105,6 @@ for (const button of buttons){
                     }
                 }
             }
-            //bridge
             for(let i = 0; i<bridgeChordsArr.length; i++){
                 for(let j = 0; j<chordsMinor.length; j++){
                     if(bridgeChordsArr[i] === chordsMinor[j]){
