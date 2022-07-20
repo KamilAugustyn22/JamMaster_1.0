@@ -27,14 +27,14 @@ public class SongSetController {
         User user = userRepository.readUserById(1);
         model.addAttribute("userNameAndSurname", user.getName() +" "+ user.getSurname());
         model.addAttribute("sets", songSetRepository.findAllSets(1));
-        return "songSetList";
+        return "songSet/songSetList";
     }
 
     @GetMapping("/add")
     public String addSetForm(Model model){
         User user = userRepository.readUserById(1);
         model.addAttribute("userNameAndSurname", user.getName() +" "+ user.getSurname());
-        return "addSet";
+        return "songSet/addSet";
     }
 
     @PostMapping("/add")
@@ -51,7 +51,7 @@ public class SongSetController {
         model.addAttribute("setName", songSet.getName());
         model.addAttribute("setId", songSet.getId());
         model.addAttribute("songs", songSet.getSongList());
-        return "setDetails";
+        return "songSet/setDetails";
     }
 
     @RequestMapping("/{id}/addsong")
@@ -61,7 +61,7 @@ public class SongSetController {
         model.addAttribute("songs", songRepository.findAllSongs());
         model.addAttribute("setId", id);
 
-        return "addSongToSet";
+        return "songSet/addSongToSet";
     }
     @RequestMapping("/{setId}/{songId}")
     public String addSongToSetAction(@PathVariable("setId")long setId, @PathVariable("songId")long songId){
@@ -77,7 +77,7 @@ public class SongSetController {
         Song song = songRepository.readSongById(songId);
         model.addAttribute("songAuthor", song.getAuthor());
         model.addAttribute("songTitle", song.getTitle());
-        return "deleteSongFromSet";
+        return "songSet/deleteSongFromSet";
     }
     @PostMapping("/{setId}/remove/{songId}")
     public String deleteSongFromSet(@PathVariable("setId")long setId, @PathVariable("songId")long songId){
