@@ -51,9 +51,8 @@
                 </div>
                 <form class="user">
                   <div class="form-group">
-                    <input type="email" class="form-control form-control-user"
-                           id="exampleInputEmail" aria-describedby="emailHelp"
-                           placeholder="Podaj adres email">
+                    <input type="text" class="form-control form-control-user"
+                           placeholder="Podaj adres nazwę użytkownika">
                   </div>
                   <div class="form-group">
                     <input type="password" class="form-control form-control-user"
@@ -65,9 +64,9 @@
                       <label class="custom-control-label" for="customCheck">Pamiętaj mnie</label>
                     </div>
                   </div>
-                  <a href="/" class="btn btn-primary btn-user btn-block">
+                  <button type="submit" class="btn btn-primary btn-user btn-block">
                     Zaloguj
-                  </a>
+                  </button>
                   <hr>
                   <a href="/" class="btn btn-google btn-user btn-block">
                     <i class="fab fa-google fa-fw"></i> Zaloguj przez Google
