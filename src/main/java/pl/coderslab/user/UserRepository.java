@@ -30,4 +30,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
     void deleteUserById(long id);
 
     User findByUsername(String username);
+
+    User save(User user);
 }
