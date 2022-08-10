@@ -18,9 +18,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/**").authenticated()
+                .antMatchers("/login").permitAll()
                 .and().formLogin()
                 .loginPage("/login")
                 .defaultSuccessUrl("/");
+        http.csrf().disable();
+        http.cors().disable();
     }
     @Bean
     public BCryptPasswordEncoder passwordEncoder(){

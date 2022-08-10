@@ -10,11 +10,6 @@ import pl.coderslab.song.SongRepository;
 import pl.coderslab.user.User;
 import pl.coderslab.user.UserRepository;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import java.util.List;
-
-
 @Controller
 public class HomeController {
     private final SongRepository songRepository;
@@ -45,17 +40,7 @@ public class HomeController {
         model.addAttribute("songKey", lastSong.getSongKey());
         return "index";
     }
-    @GetMapping("/register")
-    public String register(Model model) {
-        model.addAttribute("user", new User());
-        return "register";
-    }
 
-    @PostMapping("/register")
-    public String register(User user){
-        userRepository.createUser(user.getName(), user.getSurname(), user.getEmail(),user.getUsername(), user.getPassword());
-        return "redirect:/login";
-    }
 
     @RequestMapping("/about")
     public String aboutUs(Model model){
