@@ -40,15 +40,21 @@ for (const button of buttons){
                 for(let j = 0; j<chordsMinor.length; j++){
                     if(introChordsArr[i] === chordsMinor[j]){
                         if(j === chordsMinor.length-1){
-                            j = -1;
+                            j = 0;
+                            newBridge[i] = chordsMinor[j];
                         }
-                        newIntro[i] = chordsMinor[j + 1];
+                        else{
+                            newBridge[i] = chordsMinor[j + 1];
+                        }
                     }
                     else if(introChordsArr[i] === chordsMajor[j]){
                         if(j === chordsMajor.length-1){
-                            j = -1;
+                            j = 0;
+                            newBridge[i] = chordsMajor[j];
                         }
-                        newIntro[i] = chordsMajor[j + 1];
+                        else{
+                            newBridge[i] = chordsMajor[j + 1];
+                        }
                     }
                 }
             }
@@ -56,15 +62,21 @@ for (const button of buttons){
                 for(let j = 0; j<chordsMinor.length; j++){
                     if(verseChordsArr[i] === chordsMinor[j]){
                         if(j === chordsMinor.length-1){
-                            j = -1;
+                            j = 0;
+                            newBridge[i] = chordsMinor[j];
                         }
-                        newVerse[i] = chordsMinor[j + 1];
+                        else{
+                            newBridge[i] = chordsMinor[j + 1];
+                        }
                     }
                     else if(verseChordsArr[i] === chordsMajor[j]){
                         if(j === chordsMajor.length-1){
-                            j = -1;
+                            j = 0;
+                            newBridge[i] = chordsMajor[j];
                         }
-                        newVerse[i] = chordsMajor[j + 1];
+                        else{
+                            newBridge[i] = chordsMajor[j + 1];
+                        }
                     }
                 }
             }
@@ -72,15 +84,21 @@ for (const button of buttons){
                 for(let j = 0; j<chordsMinor.length; j++){
                     if(reffChordsArr[i] === chordsMinor[j]){
                         if(j === chordsMinor.length-1){
-                            j = -1;
+                            j = 0;
+                            newBridge[i] = chordsMinor[j];
                         }
-                        newReffrain[i] = chordsMinor[j + 1];
+                        else{
+                            newBridge[i] = chordsMinor[j + 1];
+                        }
                     }
                     else if(reffChordsArr[i] === chordsMajor[j]){
                         if(j === chordsMajor.length-1){
-                            j = -1;
+                            j = 0;
+                            newBridge[i] = chordsMajor[j];
                         }
-                        newReffrain[i] = chordsMajor[j + 1];
+                        else{
+                            newBridge[i] = chordsMajor[j + 1];
+                        }
                     }
                 }
             }
@@ -88,15 +106,21 @@ for (const button of buttons){
                 for(let j = 0; j<chordsMinor.length; j++){
                     if(bridgeChordsArr[i] === chordsMinor[j]){
                         if(j === chordsMinor.length-1){
-                            j = -1;
+                            j = 0;
+                            newBridge[i] = chordsMinor[j];
                         }
+                        else{
                         newBridge[i] = chordsMinor[j + 1];
+                        }
                     }
                     else if(bridgeChordsArr[i] === chordsMajor[j]){
                         if(j === chordsMajor.length-1){
-                            j = -1;
+                            j = 0;
+                            newBridge[i] = chordsMajor[j];
                         }
+                        else{
                         newBridge[i] = chordsMajor[j + 1];
+                        }
                     }
                 }
             }

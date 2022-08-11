@@ -25,7 +25,6 @@ public class User {
     @Email
     @Column(unique = true)
     private String email;
-    @Range(min = 6, max = 16)
     private String password;
 
     private int enabled;

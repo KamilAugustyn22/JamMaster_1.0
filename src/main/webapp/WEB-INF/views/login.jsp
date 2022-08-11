@@ -49,13 +49,13 @@
                 <div class="text-center">
                   <h1 class="h4 text-gray-900 mb-4">Witaj!</h1>
                 </div>
-                <form class="user">
+                <form class="user" method="post">
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-user"
+                    <input type="text" class="form-control form-control-user" name="username"
                            placeholder="Podaj adres nazwę użytkownika">
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control form-control-user"
+                    <input type="password" class="form-control form-control-user" name="password"
                            id="exampleInputPassword" placeholder="Hasło">
                   </div>
                   <div class="form-group">
