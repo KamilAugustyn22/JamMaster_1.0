@@ -19,7 +19,19 @@ public class SessionController {
     public String defaultView(Model model){
         User user = userRepository.readUserById(1);
         model.addAttribute("userNameAndSurname", user.getName() +" "+ user.getSurname());
-        return "session";
+        return "sessions/session";
+    }
+    @RequestMapping("/create")
+    public String createSession(Model model){
+        User user = userRepository.readUserById(1);
+        model.addAttribute("userNameAndSurname", user.getName() +" "+ user.getSurname());
+        return "sessions/createSession";
+    }
+    @RequestMapping("/join")
+    public String joinSession(Model model){
+        User user = userRepository.readUserById(1);
+        model.addAttribute("userNameAndSurname", user.getName() +" "+ user.getSurname());
+        return "sessions/joinSession";
     }
 
 }

@@ -136,6 +136,9 @@
         <!-- Page Heading -->
         <h1 class="h3 mb-4 text-gray-800">Tryb Sesji</h1>
         <h4>Ciągle pracujemy nad trybem sesji. Przepraszamy za niedogodności!</h4>
+
+        <a href="/session/create"><button type="button"> Stwórz nową sesję</button></a>
+        <a href="/session/join"><button type="button"> Dołącz do istniejącej sesji</button></a>
       </div>
       <!-- /.container-fluid -->
 
