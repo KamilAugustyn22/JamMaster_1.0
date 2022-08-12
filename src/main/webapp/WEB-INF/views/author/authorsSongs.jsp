@@ -378,12 +378,8 @@
     <!-- End of Main Content -->
 
     <!-- Footer -->
-    <footer class="sticky-footer bg-white">
-      <div class="container my-auto">
-        <div class="copyright text-center my-auto">
-          <span>Copyright &copy; JamMaster 2022</span>
-        </div>
-      </div>
+    <footer>
+      <jsp:include page="../footer.jsp"/>
     </footer>
     <!-- End of Footer -->
 

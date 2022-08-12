@@ -1,4 +1,10 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: mac
+  Date: 13/07/2022
+  Time: 14:28
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,19 +17,16 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>JamMaster - Lista Piosenek</title>
+    <title>JamMaster - Tryb Sesji</title>
 
-    <!-- Custom fonts for this template -->
+    <!-- Custom fonts for this template-->
     <link href="../vendor/fontawesome-free/css/all.css" rel="stylesheet" type="text/css">
     <link
             href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
             rel="stylesheet">
 
-    <!-- Custom styles for this template -->
+    <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Custom styles for this page -->
-    <link href="../vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
 </head>
 
@@ -50,26 +53,25 @@
         <li class="nav-item">
             <a class="nav-link" href="/">
                 <i class="fas fa-fw fa-home"></i>
-                <span>Strona główna</span></a>
+                <span>Strona Główna</span></a>
         </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider">
 
-
         <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item active">
+        <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-table"></i>
+                <i class="fas fa-fw fa-cog"></i>
                 <span>Listy</span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Wybierz listę:</h6>
+                    <h6 class="collapse-header">Wybierz listę</h6>
                     <a class="collapse-item" href="/author/list">Lista Autorów</a>
                     <a class="collapse-item" href="/set/list">Gotowe Sety</a>
-                    <a class="collapse-item active" href="/song/list">Lista Piosenek</a>
+                    <a class="collapse-item" href="/song/list">Lista Piosenek</a>
                 </div>
             </div>
         </li>
@@ -90,6 +92,8 @@
                 </div>
             </div>
         </li>
+
+
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
             <a class="nav-link" href="/about">
@@ -99,10 +103,10 @@
         </li>
 
         <!-- Nav Item - Tables -->
-        <li class="nav-item">
+        <li class="nav-item active">
             <a class="nav-link" href="/session/">
                 <i class="fas fa-fw fa-video"></i>
-                <span>Tryb Sesji</span></a>
+                <span>Tryb sesji</span></a>
         </li>
 
         <!-- Divider -->
@@ -126,11 +130,9 @@
             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                 <!-- Sidebar Toggle (Topbar) -->
-                <form class="form-inline">
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                </form>
+                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                    <i class="fa fa-bars"></i>
+                </button>
 
                 <!-- Topbar Search -->
                 <form
@@ -161,7 +163,7 @@
                             <form class="form-inline mr-auto w-100 navbar-search">
                                 <div class="input-group">
                                     <input type="text" class="form-control bg-light border-0 small"
-                                           placeholder="Search for..." aria-label="Search"
+                                           placeholder="Wyszukaj" aria-label="Search"
                                            aria-describedby="basic-addon2">
                                     <div class="input-group-append">
                                         <button class="btn btn-primary" type="button">
@@ -332,53 +334,8 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Lista piosenek</h1>
-                <a href="/song/add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                        class="fas fa-plus-square fa-sm text-white-50"></i> Dodaj piosenkę </a>
-            </div>
-
-
-                <!-- DataTales Example -->
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Piosenki</h6>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Tytuł</th>
-                                    <th>Tonacja</th>
-                                    <th>Metrum</th>
-                                    <th>Dodano</th>
-                                    <th>Autor</th>
-                                    <th>Akcje</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                    <c:forEach var="song" items="${songs}">
-                                        <tr>
-                                            <th>${song.getId()}</th>
-                                            <th>${song.getTitle()}</th>
-                                            <th>${song.getSongKey()}</th>
-                                            <th>${song.getMtrm()}</th>
-                                            <th>${song.getCreatedOn()}</th>
-                                            <th>${song.getAuthor()}</th>
-                                            <th><a href="/song/details/${song.getId()}" class="btn btn-info btn-icon-split">
-                                                <span class="icon text-white-50"><i class="fas fa-info-circle"></i></span>
-                                                <span class="text">Szczegóły</span>
-                                            </a></th>
-                                        </tr>
-                                    </c:forEach>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
+                <h1 class="h3 mb-4 text-gray-800">Tryb Sesji</h1>
+                <h4>Ciągle pracujemy nad trybem sesji. Przepraszamy za niedogodności!</h4>
             </div>
             <!-- /.container-fluid -->
 
@@ -415,8 +372,8 @@
             </div>
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Anuluj</button>
+                <a class="btn btn-primary" href="login.html">Wyloguj</a>
             </div>
         </div>
     </div>
@@ -431,13 +388,6 @@
 
 <!-- Custom scripts for all pages-->
 <script src="../js/sb-admin-2.js"></script>
-
-<!-- Page level plugins -->
-<script src="../vendor/datatables/jquery.dataTables.js"></script>
-<script src="../vendor/datatables/dataTables.bootstrap4.js"></script>
-
-<!-- Page level custom scripts -->
-<script src="../js/demo/datatables-demo.js"></script>
 
 </body>
 
