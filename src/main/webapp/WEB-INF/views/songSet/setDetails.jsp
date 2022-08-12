@@ -130,7 +130,7 @@
     <div id="content">
 
       <!-- Topbar -->
-      <jsp:include page="../topbar.jsp">
+      <jsp:include page="../topbar.jsp"/>
       <!-- End of Topbar -->
 
       <!-- Begin Page Content -->
